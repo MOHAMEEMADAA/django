@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table{
+                border:2px solid black;
+                font-size: 30px;
+            
+                
+            }
+            td{
+                border:2px solid black;
+                
+                
+            }
+            a{
+                text-decoration: none;
+                color: rgb(141, 36, 36);
+            }
+         
+        </style>
+    </head>
+    <body>
+        <h1> List Page</h1>
+
+
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>TRACK_ID</td>
+        </tr>
+        <br>
+        {%for trainee in trainees%}
+        <tr>
+            <td>{{trainee.id}}</td>
+            <td>{{trainee.name}}</td>
+            <td >{{trainee.track_id}}</td>
+            <td> <a href="{%url 'create'%}">create</a></td>
+            <td> <a href="{%url 'delete_trainee' trainee.id %}">Delete</a></td>
+            <td> <a href="{%url 'update_trainee' trainee.id %}">Update</a></td>
+            <td> <a href="{%url 'show_details_trainee' trainee.id %}">Show Details</a></td>
+
+        </tr>
+        <br>
+        {%endfor%}
+    </table>
+        
+    </body>
+</html>
